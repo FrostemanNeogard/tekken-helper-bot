@@ -1,0 +1,7 @@
+# Files to be ignored
+**/node_modules
+**.env
+
+*-test.js
+
+dist
