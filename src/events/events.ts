@@ -8,7 +8,8 @@ export class EventListener {
   async onMessage([message]: ArgsOf<Events.MessageCreate>) {
     if (
       message.channelId == "1049306588592214056" &&
-      message.author.id == "228913502012702720"
+      message.author.id == "228913502012702720" &&
+      message.attachments.size > 0
     ) {
       try {
         await message.react("<:bombasticsideeye:1412038834601852958>");
