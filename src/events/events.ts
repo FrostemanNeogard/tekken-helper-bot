@@ -5,7 +5,18 @@ import "dotenv/config";
 @Discord()
 export class EventListener {
   @On({ event: Events.MessageCreate })
-  onMessage([message]: ArgsOf<Events.MessageCreate>) {}
+  async onMessage([message]: ArgsOf<Events.MessageCreate>) {
+    if (
+      message.channelId == "1049306588592214056" &&
+      message.author.id == "228913502012702720"
+    ) {
+      try {
+        await message.react("<:bombasticsideeye:1412038834601852958>");
+      } catch (e) {
+        console.log(`Error when reacting to good eats garfield message: ${e}`);
+      }
+    }
+  }
 
   @On({ event: Events.InteractionCreate })
   onInteractionCreate(
